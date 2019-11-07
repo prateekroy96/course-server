@@ -20,6 +20,8 @@ app.use((req, res, next) => {
     }
 })
 
+app.use(express.static('dist/course-manager'));
+
 app.use('/', router, (req, res) => {
     console.log("to router")
 })
