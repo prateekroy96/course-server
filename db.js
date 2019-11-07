@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 const db = new Sequelize({
     dialect: 'sqlite',
-    storage: 'server/database.sqlite'
+    storage: 'database.sqlite'
 });
 
 const Users = db.define('users', {
@@ -111,7 +111,7 @@ let allot = function (data) {
     })
 }
 
-db.sync().then(() => console.log("Database is ready")).catch(() => console.log("Can't connect to database"))
+db.sync().then(() => console.log("Database is ready")).catch((err) => console.log("Can't connect to database",err))
 
 exports = module.exports = {
     db,
